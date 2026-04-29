@@ -6,70 +6,60 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
+      padding: 10px;
       background-color: #f5f5f5;
+      margin: 0;
     }
     h2 {
       color: #003366;
+      font-size: 14px;
+      margin: 0 0 8px 0;
     }
     input[type="text"] {
-      padding: 8px;
-      width: 250px;
+      padding: 5px;
+      width: 200px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 13px;
     }
     button {
-      padding: 8px 16px;
+      padding: 5px 12px;
       background-color: #003366;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-left: 8px;
+      margin-left: 6px;
+      font-size: 13px;
     }
     button:hover {
       background-color: #0055aa;
     }
     #result {
-      margin-top: 20px;
-      padding: 16px;
+      margin-top: 8px;
+      padding: 8px;
       background-color: white;
       border: 1px solid #ddd;
       border-radius: 4px;
       display: none;
+      font-size: 13px;
     }
-    #result p {
-      margin: 4px 0;
-    }
+    #result p { margin: 2px 0; }
   </style>
 </head>
 <body>
-
   <h2>Case Lookup</h2>
-
   <div>
     <input type="text" id="caseInput" placeholder="Enter Case ID..." />
     <button onclick="lookupCase()">Search</button>
   </div>
-
   <div id="result">
     <p><strong>Case ID:</strong> <span id="displayCaseId"></span></p>
     <p><strong>Status:</strong> Demo result — no backend connected yet</p>
     <p><strong>Note:</strong> This is a test mashup for Atea.</p>
   </div>
-
   <script>
     function lookupCase() {
       var caseId = document.getElementById('caseInput').value.trim();
-      if (caseId === '') {
-        alert('Please enter a Case ID.');
-        return;
-      }
-      document.getElementById('displayCaseId').innerText = caseId;
-      document.getElementById('result').style.display = 'block';
-    }
-  </script>
-
-</body>
-</html>
-```
+      if (caseId === '') { alert('Please enter a Case ID.'); return; }
+      document.getElementById(
